@@ -6,6 +6,9 @@ async function fetchTodosApiCall() {
 	const res = await fetch(`${process.env.BASE_URL}/api/todos/`, { 
 		cache: 'no-store' 
 	});
+
+	const headerCheck = res.headers.get('Content-Type');
+	console.log('headerCheck: ', headerCheck);
 	return res.json();
 }
 
